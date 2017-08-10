@@ -1,7 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from requests import get, post
-import urllib2
 from django.core.files.storage import FileSystemStorage
 
 def home(req, text):
