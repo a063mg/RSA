@@ -20,4 +20,5 @@ import blog.views
 
 urlpatterns = [
     url(r'^name/(\w+)$', blog.views.home),
-]
+    url(r'^form', blog.views.contact),
+    ]

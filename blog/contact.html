@@ -1,0 +1,37 @@
+<html>
+<head>
+     
+    <title>Django</title>
+</head>
+<body>
+    <form action="/form" method="post" enctype="multipart/form-data" >
+        <label>Имя</label> 
+        <input type="file" name="file" value="{{ form.file }}" id="upload" onchange="getName(this.value);" />
+ 
+        <label>Е-mail</label> 
+        <input name="email" type="text" value="{{ form.email }}">
+         
+        <label>Сообщение</label>
+        <textarea name="message">{{ form.message }}</textarea>
+         
+        <input type="submit" value="Отправить">
+        {% csrf_token %}
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        function getName (str){
+        if (str.lastIndexOf('\\')){
+            var i = str.lastIndexOf('\\')+1;
+        }
+        else{
+            var i = str.lastIndexOf('/')+1;
+        }
+        var filename = str.slice(i);
+        var uploaded = document.getElementById("fileformlabel");
+        uploaded.innerHTML = filename;
+        }
+    </script>
+</body>
+</html>
