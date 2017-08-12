@@ -1,1 +1,1 @@
-web: gunicorn Django.wsgi --log-file -
+web: gunicorn RSA.wsgi --log-file -
