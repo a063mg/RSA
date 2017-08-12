@@ -16,9 +16,9 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-import blog.views
+import project.views
 
 urlpatterns = [
-    url(r'^name/(\w+)$', blog.views.home),
-    url(r'^form', blog.views.contact),
+    url(r'^name/(\w+)$', project.views.home),
+    url(r'^genkey', project.views.contact_gen_key),
     ]

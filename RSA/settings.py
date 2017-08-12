@@ -49,12 +49,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Django.urls'
+ROOT_URLCONF = 'RSA.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['blog'],
+        'DIRS': ['project'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -67,7 +67,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Django.wsgi.application'
+WSGI_APPLICATION = 'RSA.wsgi.application'
 
 
 # Database
