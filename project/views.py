@@ -8,7 +8,7 @@ def home(req, text):
 def ifint(integer):
     integer = str(integer)
     lst = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-    if not integer:
+    if integer == '':
          return False
     else:
         ifinteger = True
