@@ -21,7 +21,7 @@ def issimple(num):
     if num == 1:
         return False
     else:
-        lst = range(0, num)
+        lst = list(range(0, num))
         i = 2
         while i < num:
             if lst[i] != 0:
@@ -87,7 +87,7 @@ def contact_gen_key(request):
             scnd = int(scnd)
             if not(issimple(frst) and issimple(scnd)):
                 error = 'Both numbers must be simple'
-            if frst < 100 or scnd < 100:
+            if (frst < 100) or (scnd < 100):
                 error = 'Both numbers must be more than 100'
         if scnd == '':
             error = 'Enter second number'
