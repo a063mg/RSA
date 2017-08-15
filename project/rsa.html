@@ -10,10 +10,13 @@
         .input::-webkit-input-placeholder {
           font-family: 'Khula', sans-serif;
         }
+        .area::-webkit-input-placeholder {
+          font-family: 'Khula', sans-serif;
+        }
         .input{
             font-family: 'Khula', sans-serif;
             width: 380px;
-            height: 0px;
+            height: 48px;
             font-size: 18px;
             margin: auto;
             margin-top: 20px;
@@ -81,15 +84,45 @@
             border-radius: 10px;
             opacity: 0.7;
             background-color: rgb(225, 0, 0);
-            font: 300 13px/39px 'Open Sans', Helvetica, Arial, sans-serif;
             text-decoration: none;
             color: #fff;
             cursor: pointer;
             transition: background-color 1s;
-            transition: border 1s;
         }
         .button:hover{
             background-color: rgb(10, 160, 255);
+        }
+        .area{
+          width: 400px;
+          height: 200px;
+          margin: auto;
+          display: block;
+          cursor: pointer;
+          box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          padding: 8px 10px;
+          outline: none;
+          border: 2px solid rgb(105, 105, 105);
+          border-radius: 0;
+          background: #fff;
+          font-family: 'Khula', sans-serif;
+          font-size: 18px;
+          color: #404040;
+          margin-top: 20px;
+          appearance: normal;
+          -moz-appearance: none;
+          -webkit-appearance: none;
+          transition: border-color 0.3s;
+          -o-transition: border-color 0.3s;
+          -ms-transition: border-color 0.3s;
+          -moz-transition: border-color 0.3s;
+          -webkit-transition: border-color 0.3s;
+          transition: border 1s;
+          height: auto;
+          resize: none;
+          }
+        .area:hover{
+            border: 2px solid rgb(10, 160, 255);
         }
         .header_text{
             font: 300 39px/39px 'Open Sans', Helvetica, Arial, sans-serif;
@@ -123,18 +156,17 @@
 
 <body>
     <a href="/" class="back_button">Back</a><center><h1 class="header_text" >Enter 2 simple numbers:</h1></center>
-    <form class="form" action="/genkey" method="post"> 
-         <center><a href="" class="debug-text">{{ error }}</a></center>
-        <input class="input" placeholder="0" type="" value="{{ first }}" name="first" >
-        <input class="input" placeholder="0" type="" value="{{ second }}" name="second" >
+    <form class="form" action="/rsa" method="post"> 
+         <center><a href="" class="debug-text">{{ error }}</a></center> 
+         <input class="input" placeholder="Open keys" type="" value="{{ first }}{{ second }}" name="key" >
+         <textarea class="area"  rows="4" placeholder="Text" name="text">{{ text }}</textarea>
+         <textarea class="area"  rows="4" placeholder="Code" name="code">{{ code }}</textarea>
         <center><button class="button">Submit</button></center>
         {% csrf_token %}
     </form>
-    <center><div class="block">
-        <p href="" class="paragraph">Open key:</p><p class="subtext">{{ open }}</p>
-        <p href="" class="paragraph">Closed key:</p><p id="d" class="subtext">{{ closed }}</p>
-    </div></center>
-
+<!--     <center><div class="block">
+        <p href="" class="paragraph">Enncode text:</p><p class="subtext">{{ code }}</p>
+    </div></center> -->
 </body>
 
 

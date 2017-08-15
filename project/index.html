@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+	    body{
+            font-family: 'Khula', sans-serif;
+        }
+		.block{
+			width: auto;
+			height: auto;
+			margin: auto;
+			line-height: auto;
+			margin-top: -3px;
+			border: 3px solid black;
+			cursor: pointer;
+		}
+		.block a{
+			margin: auto;
+			margin-left: 50px;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 25px;
+			margin-top: 25px;
+			margin-bottom: 25px;
+			color: rgb(10, 160, 255);
+			transition: underline 1s,font-size 1s, color 1s;
+		}
+		.block a:hover{
+			text-decoration: underline;
+			color: rgba(255, 1, 91, 0.8);
+			font-size: 100px;
+		}	
+	</style>
+</head>
+<body>
+	<center>
+		<div class="block"><a href="/genkey">Key generator</a></div>
+		<div class="block"><a href="/encoder">Encoder</a></div>
+		<div class="block"><a href="/decoder">Decoder</a></div>
+		<div class="block"><a href="/rsa">Electronic signature verification</a></div>
+	</center>
+	
+</body>
+</html>

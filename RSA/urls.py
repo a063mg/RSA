@@ -19,6 +19,9 @@ from django.contrib import admin
 import project.views
 
 urlpatterns = [
-    url(r'^name/(\w+)$', project.views.home),
+    url(r'^$', project.views.home),
     url(r'^genkey', project.views.contact_gen_key),
+    url(r'^encoder', project.views.encode_contact),
+    url(r'^decoder', project.views.decode_contact),
+    url(r'^rsa', project.views.rsa_contact),
     ]
