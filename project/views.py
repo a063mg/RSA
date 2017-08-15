@@ -52,7 +52,7 @@ def is_prime(num):
         return True
     if num < 2 or num % 2 == 0:
         return False
-    for n in xrange(3, int(num**0.5)+2, 2):
+    for n in list(range(3, int(num**0.5)+2, 2)):
         if num % n == 0:
             return False
     return True
