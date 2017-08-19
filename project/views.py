@@ -72,6 +72,15 @@ def bpow(x, n, m):
       count %=m;
   return count % m
 
+def find_special_number(n):
+    lst = list(range(n+1))
+    for num in lst:
+        if is_prime(num):
+            if n&num == 0:
+                e = num
+                return e
+                
+
 def genkey(p, q):
     # generating keys
 
@@ -81,19 +90,7 @@ def genkey(p, q):
     e = 0 
 
     # finding special number
-    a = list(range(n+1))
-    a[1] = 0
-    lst = [1]
-
-    i = 2
-    while i <= N:
-        if a[i] != 0:
-            if nod(N, a[i]) == False:
-                e = a[i]
-                break;
-        for j in list(range(i, n+1, i)):
-            a[j] = 0
-        i += 1
+    e = find_special_umber(n)
 
     d = mulinv(e, N)
 
