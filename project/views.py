@@ -122,7 +122,7 @@ def decode(e, n, code):
     # Converting int 2 text
     for char in intext:
         if not(char >= 65536):
-            word += unichr(char)
+            word += chr(char)
         else:
             return('False')
     return word
