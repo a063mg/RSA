@@ -76,7 +76,7 @@ def find_special_number(n):
     lst = list(range(n+1))
     for num in lst:
         if is_prime(num):
-            if n%num == 0:
+            if n%num != 0:
                 e = num
                 return e
                 
