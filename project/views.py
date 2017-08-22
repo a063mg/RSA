@@ -41,7 +41,7 @@ def egcd(a, b):
     else:
         g, x, y = egcd(b % a, a)
         return (g, y - (b // a) * x, x)
- 
+
 def mulinv(b, n):
     g, x, _ = egcd(b, n)
     if g == 1:
@@ -72,6 +72,15 @@ def bpow(x, n, m):
       count %=m;
   return count % m
 
+def find_special_number(n):
+    lst = list(range(n+1))
+    for num in lst:
+        if is_prime(num):
+            if n%num != 0 and num != 2:
+                e = num
+                return e
+                
+
 def genkey(p, q):
     # generating keys
 
@@ -81,19 +90,7 @@ def genkey(p, q):
     e = 0 
 
     # finding special number
-    a = list(range(n+1))
-    a[1] = 0
-    lst = [1]
-
-    i = 2
-    while i <= N:
-        if a[i] != 0:
-            if nod(N, a[i]) == False:
-                e = a[i]
-                break;
-        for j in list(range(i, n+1, i)):
-            a[j] = 0
-        i += 1
+    e = find_special_number(n)
 
     d = mulinv(e, N)
 
@@ -126,7 +123,7 @@ def decode(e, n, code):
     # Converting int 2 text
     for char in intext:
         if not(char >= 65536):
-            word += chr(char)
+            word += unichr(char)
         else:
             return('False')
     return word
