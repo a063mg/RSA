@@ -73,12 +73,13 @@ def bpow(x, n, m):
   return count % m
 
 def find_special_number(n):
-    lst = list(range(n+1))
-    for num in lst:
-        if is_prime(num):
+    num = 0 
+    while num < N+1:
+        if isprime(num):
             if n%num != 0:
                 e = num
                 return e
+        num += 1
                 
 
 def genkey(p, q):

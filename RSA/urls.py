@@ -15,11 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.http import HttpResponse
 
 import project.views
 
+def hello(req):
+    retur 
+
 urlpatterns = [
     url(r'^$', project.views.home),
+    url(r'^hello', project.views.contact_gen_key),
     url(r'^genkey', project.views.contact_gen_key),
     url(r'^encoder', project.views.encode_contact),
     url(r'^decoder', project.views.decode_contact),
