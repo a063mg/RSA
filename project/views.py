@@ -74,7 +74,7 @@ def bpow(x, n, m):
 
 def find_special_number(n):
     num = 0 
-    while num < N+1:
+    while num < n+1:
         if isprime(num):
             if n%num != 0:
                 e = num
