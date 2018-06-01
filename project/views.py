@@ -73,10 +73,13 @@ def bpow(x, n, m):
   return count % m
 
 def find_special_number(n):
+<<<<<<< HEAD
     num = 0 
     while num < n+1:
 =======
+    lst = list(range(n+1))
     for num in lst:
+>>>>>>> 9a34490c85c44e91a99eec44ead171e12aef411a
         if is_prime(num):
             if n%num != 0:
                 e = num
