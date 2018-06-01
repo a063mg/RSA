@@ -75,11 +75,16 @@ def bpow(x, n, m):
 def find_special_number(n):
     num = 0 
     while num < n+1:
+=======
+    for num in lst:
         if is_prime(num):
             if n%num != 0:
                 e = num
                 return e
+<<<<<<< HEAD
         num += 1
+=======
+>>>>>>> 9a34490c85c44e91a99eec44ead171e12aef411a
                 
 
 def genkey(p, q):
@@ -92,6 +97,10 @@ def genkey(p, q):
 
     # finding special number
     e = find_special_number(N)
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9a34490c85c44e91a99eec44ead171e12aef411a
     d = mulinv(e, N)
 
     return(e, n, d, n)
